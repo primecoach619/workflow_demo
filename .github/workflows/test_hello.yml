@@ -18,7 +18,10 @@ jobs:
       - run: |
           echo "Job running on a ${{ runner.os }} server hosted by GitHub."
           echo "On branch ${{ github.ref }} of repository ${{ github.repository }}."
-          
+      
+      #The 'uses' keyword specifies that this step will run 'v2' of the actions/checkout action. 
+      #This is an action that checksout your repository onto the runner, allowing you to run scripts or other actions
+      #against your code. You should use the checkout action any time your workflow will run against the respoistory's code    
       - name: Check out repository code so it can be run by GitHub
         uses: actions/checkout@v2
         
@@ -29,6 +32,8 @@ jobs:
           echo "The contents of the repository are:"
           ls ${{ github.workspace }}
 
+     #This step uses the 'actions/setup-python@v2' action to install the specified version of python.
+     #This puts python in your path      
       - name: Setup Python
         uses: actions/setup-python@v2
         with:
