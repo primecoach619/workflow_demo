@@ -1,5 +1,5 @@
 def main():
-    print("Hello Mario's World!")
+    print("Hello Luigi's World!")
 
 if __name__ == "__main__":
     main()
